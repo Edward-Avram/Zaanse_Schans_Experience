@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scene.add(light);
 
     // 3d object
-    const gltf = await loadGLTF('./assets/Scene.glb');
+    const gltf = await loadGLTF('./assets/Scene_Final.glb');
     gltf.scene.scale.set(0.4, 0.4, 0.4);
     gltf.scene.position.set(0, 0, 0);
 
@@ -38,18 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     v1plane.position.set(0,-0.15,0.05);
     anchor.group.add(v1plane);
     
-//video2 
-
-const video2 = await loadVideo("./assets/Nebula4.mp4");
-    video2.setAttribute('loop', true);
-    const v2texture = new THREE.VideoTexture(video2);
-
-    const v2geometry = new THREE.PlaneGeometry(1, 1);
-    const v2material = createChromaMaterial(v2texture, 0x00ff00);
-    const v2plane = new THREE.Mesh(v2geometry,v2material);
-    v2plane.position.set(0,0.2,-0.4);
-    v2plane.scale.multiplyScalar(1.5);
-    anchor.group.add(v2plane);
 
     //audio
     const audioClip = await loadAudio('./assets/Dreamy-Short.mp3');
@@ -64,12 +52,10 @@ const video2 = await loadVideo("./assets/Nebula4.mp4");
 anchor.onTargetFound = () =>{
   audio.play();
   video1.play();
-  video2.play();
 }
 anchor.onTargetLost = () => {
   audio.pause();
   video1.pause();
-  video2.play();
 }
 
 
