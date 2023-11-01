@@ -82,34 +82,6 @@ animation: move 2s linear infinite;
 50% { top: calc(100% - 10px) }
 }  
 
-
-.control-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 3%; /* Adjust this value if you want to move the buttons up or down */
-    width: 100%;
-}
-
-.control-btn {
-    background: transparent;
-    border: none;
-    margin: 0 10px; /* Spacing between buttons */
-    padding: 10px; /* Making the touch area larger */
-    outline: none;
-    cursor: pointer;
-    transition: filter 0.3s;
-}
-
-.control-btn img {
-    width: 50px; /* Adjust the size if necessary */
-    filter: brightness(100%);
-}
-
-.control-btn:active img {
-    filter: brightness(0) invert(1); /* Making the image red when active */
-}
 	    
     </style>
 
@@ -126,17 +98,6 @@ animation: move 2s linear infinite;
 
     <div id="container"></div>
 
-<div class="control-buttons">
-        <button class="control-btn" id="swap-camera">
-            <img src="./assets/icon1.png" alt="Swap Camera">
-        </button>
-        <button class="control-btn" id="take-picture">
-            <img src="./assets/icon2.png" alt="Take Picture">
-        </button>
-        <button class="control-btn" id="record-video">
-            <img src="./assets/icon3.png" alt="Record Video">
-        </button>
-    </div>
 	  
   </body>
 </html>
